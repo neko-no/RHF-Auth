@@ -13,7 +13,7 @@ export default function Home() {
             新規登録
           </Link>
           <Link
-            href={"/auth/signup"}
+            href={"/auth/login"}
             className="bg-blue-500 py-3 px-5 rounded-md text-white hover:bg-blue-600 duration-200"
           >
             ログイン
