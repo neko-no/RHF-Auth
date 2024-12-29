@@ -1,3 +1,4 @@
+import Button from "@/app/features/auth/components/Button";
 import InputField from "@/app/features/auth/components/InputField";
 import React from "react";
 
@@ -25,7 +26,9 @@ const page = () => {
           name="password"
         />
         <div className="mt-4">
-          <button>送信</button>
+          <Button type="submit" colorClass="bg-blue-500">
+            新規登録
+          </Button>
         </div>
       </form>
     </div>
