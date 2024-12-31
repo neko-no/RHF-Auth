@@ -18,10 +18,10 @@ export const useSignupForm = () => {
     });
 
     const onSubmit: SubmitHandler<z.infer<typeof signupFormSchema>> = async (data) => {
-        const {email, password} = data;
+        const {username, email, password} = data;
         // signup
         try {
-            const { error: signUpError } = await supabase.auth.signUp({
+            const { data, error: signUpError } = await supabase.auth.signUp({
                 email,
                 password,
               })
@@ -29,6 +29,13 @@ export const useSignupForm = () => {
             if (signUpError) {
                 console.log(signUpError);
                 throw signUpError;
+            }
+
+            const {error: userError} = await supabase.from("User").insert([{id: data.user?.id, username, email}])
+
+            if (userError) {
+                console.log(userError);
+                throw userError;
             }
 
             router.push("/auth/login");
