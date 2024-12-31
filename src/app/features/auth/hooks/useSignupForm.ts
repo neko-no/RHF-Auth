@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SubmitHandler, useForm } from "react-hook-form"
-import { signupFormSchema } from "../lib/signupFormSchema";
+import { signupFormSchema } from "../lib/formSchema";
 import { z } from "zod";
 
 
