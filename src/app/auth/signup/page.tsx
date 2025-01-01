@@ -7,10 +7,11 @@ import Link from "next/link";
 import React from "react";
 
 const Page = () => {
-  const { form, onSubmit } = useSignupForm();
+  const { form, onSubmit, error } = useSignupForm();
   return (
     <div className="mx-auto max-w-sm my-14">
       <h2 className="text-center font-medium text-2xl mb-4">新規登録</h2>
+      <p className="text-red-500">{error}</p>
       <form onSubmit={form.handleSubmit(onSubmit)}>
         <InputField
           label="ユーザー名"
