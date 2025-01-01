@@ -30,6 +30,13 @@ export default function Home() {
         <Button
           colorClass="bg-green-500 mt-4"
           type="button"
+          onClick={async () => await supabase.auth.signOut()}
+        >
+          ログアウト
+        </Button>
+        <Button
+          colorClass="bg-green-500 mt-4"
+          type="button"
           onClick={handleBlogPost}
         >
           ブログ投稿
